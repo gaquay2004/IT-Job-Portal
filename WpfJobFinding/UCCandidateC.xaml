@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="WpfJobFinding.UCCandidateC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfJobFinding"
+             mc:Ignorable="d" 
+             d:DesignHeight="300"
+             d:DesignWidth="1050"
+             Background="#8E3A59">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Candidate Info" FontFamily="Montserrat" Foreground="White" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Center" FontWeight="Black" FontSize="20"/>
+        <Label Content="Full name" FontFamily="Montserrat" Foreground="White" FontSize="15" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="0" Grid.Row="1"/>
+        <Label Content="Email" FontFamily="Montserrat" FontSize="15" Foreground="White" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="0" Grid.Row="2"/>
+        <Label Content="Phone Number" FontFamily="Montserrat" FontSize="15" Foreground="White" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="0" Grid.Row="3"/>
+        <Button x:Name="btnInfo" Content="Hồ sơ" HorizontalAlignment="Left" Foreground="White" Margin="650,41,0,0" VerticalAlignment="Top" Height="57" Width="112" Click="btnInfo_Click"/>
+        <Label x:Name="lblName" Content="Label" FontFamily="Montserrat" FontSize="15" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <Label x:Name="lblEmail" Content="Label" FontFamily="Montserrat" FontSize="15" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        <Label x:Name="lblPhone" Content="Label" FontFamily="Montserrat" FontSize="15" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="btnLogin" 
+                            BorderThickness="0"
+                            Content="DETAILED PROFILE"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            FontWeight="Bold"   
+                            Cursor="Hand"                           
+                            Margin="0,0,0,0"
+                            Click="btnInfo_Click"
+                            Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#462AD8"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="60"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</UserControl>
